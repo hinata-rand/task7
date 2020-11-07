@@ -81,20 +81,37 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Gio_task7
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <div id="globalArea" style="width:800px;height:420px"></div>
             </div>
+
+            <!-- 必要なリソースの読み込み -->
+            <script src="https://threejs.org/build/three.min.js"></script>    
+            <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
+            <script src="https://raw.githack.com/syt123450/giojs/master/assets/data/sampleData.js"></script>
+            <script>      
+      
+      //div要素を取得する
+      var container = document.getElementById( "globalArea" );
+
+      //3Dの地球を生成する
+      var controller = new GIO.Controller( container );
+
+      //サンプルのデータを設定する
+      controller.addData( data );
+
+      controller.init();
+
+
+      //データの指定方法としてはサーバーからJSON形式のデータを読み込むことも可能
+      // controller.addDataAsync('/data/sampleData.json', function() {
+      //     controller.init();
+      // })
+    
+    </script>
         </div>
     </body>
+    <script type="text/javascript" src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+    
 </html>
